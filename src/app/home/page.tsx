@@ -11,6 +11,7 @@ export default function HelloPage(){
                 <li>Sisteme e reti</li>
                 <li>Letteratura</li>
                 <li>Educazione Civica</li>
+                <li>boo</li>
             </ul>
         </div>
 
