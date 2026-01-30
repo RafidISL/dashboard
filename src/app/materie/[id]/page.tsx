@@ -1,7 +1,7 @@
 import Link from "next/link";
-import{Materia} from "@/app/models/materie";
 
-const materie: Materia[] = [
+
+const materie = [
     { id: 1, nome: "Matematica", ore: 4, insegnante: "Francesco Gonzato" },
     { id: 2, nome: "Informatica", ore: 6, insegnante: "Fabrizio Lovison" },
     { id: 3, nome: "Sistemi e reti", ore: 4, insegnante: "Sergio Balestro" },
@@ -12,20 +12,24 @@ const materie: Materia[] = [
     { id: 8, nome: "Scienze motorie", ore: 2, insegnante: "Pasqualetto Filippo" },
     { id: 9, nome: "TPSIT", ore: 3, insegnante: "Antonella Turso" },
     { id: 10, nome: "Religione", ore: 1, insegnante: "Tonin Carlo" },
-]; //creare un componente apposito
+];
 
-export default function Home() {
-    return (
-        <div>
-            <h1>DASHBOARD</h1>
-            <div>
-                {materie.map((m) => (
-                    <div  key={m.id}>
-                        <strong>{m.nome}</strong>
-                        <Link href={`/materie/${m.id}`}>DETTAGLI</Link>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+export default function DettaglioMateria({params}:{params:Promise{id:string}}) {
+    const{id}=await params;
+    const materia=await
+    for(let i=0;i<materie.length;i++){
+       if(parseInt(params.id)===materie[i].id){
+            materiatrovata=materie[i];
+            break;
+       }
+   }
+   return(
+       <div>
+           <h1>{materiatrovata.nome}</h1>
+           <p>ore settimanali:{materiatrovata.ore}</p>
+           <p>insegnante:{materiatrovata.insegnante}</p>
+       </div>
+   );
 }
+
+//components Elencoargomneti Materiacard MaterialForm ,material forms
