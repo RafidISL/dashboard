@@ -1,31 +1,26 @@
-import Link from "next/link";
-import{Materia} from "@/app/models/materie";
+import MostraMateria from "@/app/components/materiacard";
+import {Materie} from "@/app/models/materie";
 
-const materie: Materia[] = [
-    { id: 1, nome: "Matematica", ore: 4, insegnante: "Francesco Gonzato" },
-    { id: 2, nome: "Informatica", ore: 6, insegnante: "Fabrizio Lovison" },
-    { id: 3, nome: "Sistemi e reti", ore: 4, insegnante: "Sergio Balestro" },
-    { id: 4, nome: "Telecomunicazioni", ore: 3, insegnante: "Tagliapietra Giorgio" },
-    { id: 5, nome: "Inglese", ore: 3, insegnante: "Raffaella Borrelli" },
-    { id: 6, nome: "Storia", ore: 2, insegnante: "Perrotta Chiara" },
-    { id: 7, nome: "Letteratura", ore: 4, insegnante: "Perrotta Chiara" },
-    { id: 8, nome: "Scienze motorie", ore: 2, insegnante: "Pasqualetto Filippo" },
-    { id: 9, nome: "TPSIT", ore: 3, insegnante: "Antonella Turso" },
-    { id: 10, nome: "Religione", ore: 1, insegnante: "Tonin Carlo" },
-]; //creare un componente apposito
-
-export default function Home() {
+export default function HomePage() {
     return (
-        <div>
-            <h1>DASHBOARD</h1>
-            <div>
-                {materie.map((m) => (
-                    <div  key={m.id}>
-                        <strong>{m.nome}</strong>
-                        <Link href={`/materie/${m.id}`}>DETTAGLI</Link>
-                    </div>
+        <main
+            style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                gap: "20px",
+                padding: "20px",
+            }}
+        >
+
+
+            <h1 style={{ width: "100%", textAlign: "center", marginBottom: "30px" }}>DASHBOARD MATERIE</h1>
+
+                {Materie.map((m)=>(
+                    <MostraMateria key={m.id} materia={m} />
                 ))}
-            </div>
-        </div>
-    );
+
+
+        </main>
+    )
 }
