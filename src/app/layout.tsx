@@ -1,5 +1,6 @@
 import Link from "next/link";
-import styles from "./components/materiacard.module.css"
+import styles from "./components/materiacard.module.css";
+import Image from "next/image";
 
 export default function Layout({
                                    children,
@@ -13,7 +14,7 @@ export default function Layout({
             <nav className={styles.navbar}>
                 <Link href="/">Home</Link> |{" "}
                 <Link href="/materie/new">AGGIUNGI MATERIA ➕</Link> |{" "}
-                <Link href="/profilo">PROFILO</Link>
+                <Link href="/profilo" className={styles.iconaprofilo}>PROFILO</Link>
             </nav>
         </header>
 
