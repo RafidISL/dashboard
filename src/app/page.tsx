@@ -15,12 +15,9 @@ export default function HomePage() {
 
 
             <h1 style={{ width: "100%", textAlign: "center", marginBottom: "30px" }}>DASHBOARD MATERIE</h1>
-
-                {Materie.map((m)=>(
-                    <MostraMateria key={m.id} materia={m} />
+                { Materie.map((m)=>(
+                    <MostraMateria key={m.id} materia={m}/>
                 ))}
-
-
         </main>
     )
 }

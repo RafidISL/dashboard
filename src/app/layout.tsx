@@ -12,9 +12,9 @@ export default function Layout({
         <body>
         <header>
             <nav className={styles.navbar}>
-                <Link href="/">Home</Link> |{" "}
-                <Link href="/materie/new">AGGIUNGI MATERIA ➕</Link> |{" "}
-                <Link href="/profilo" className={styles.iconaprofilo}>PROFILO</Link>
+                <Link href="/">HOME</Link>
+                <Link href="/materie/nuova">AGGIUNGI MATERIA</Link>
+                <Link href="./profile" >PROFILO</Link>
             </nav>
         </header>
 
